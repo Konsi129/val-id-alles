@@ -1,4 +1,3 @@
-
 function showTab(tabId) {
   document.querySelectorAll('.tab').forEach(tab => tab.style.display = 'none');
   document.getElementById(tabId).style.display = 'block';
@@ -18,10 +17,9 @@ document.getElementById('bindungRange').addEventListener('input', function(e) {
 
 function analyzeEmotion() {
   const text = document.getElementById('emotionText').value;
-  document.getElementById('gptOutput').textContent = "Simulierte GPT-Auswertung: "" + text + "" wirkt angespannt.";
+  document.getElementById('gptOutput').textContent = "GPT (simuliert): '" + text + "' wirkt emotional aktiv.";
 }
 
-// Chart.js Beispielverlauf
 window.onload = function () {
   const ctx = document.getElementById('verlaufChart').getContext('2d');
   new Chart(ctx, {

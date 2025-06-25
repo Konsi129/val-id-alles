@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VAL-ID V100</title>
+  <title>VAL-ID V100.1 – Gesamtversion</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>VAL-ID V100 – Komplettversion</h1>
+  <h1>VAL-ID V100.1 – Gesamtversion</h1>
   <div class="tabs">
     <button onclick="showTab('szenen')">Szenen</button>
     <button onclick="showTab('emotionen')">Emotionen</button>
@@ -28,7 +28,7 @@
     <label>Skala (0–10): <input type="range" min="0" max="10" value="5" id="emotionRange" /></label>
     <span id="emotionValue">5</span>
     <br/><br/>
-    <label>Freitext:<br/><textarea id="emotionText"></textarea></label>
+    <label>Freitext:<br/><textarea id="emotionText" rows="3" cols="40"></textarea></label>
     <br/>
     <button onclick="analyzeEmotion()">Analysieren</button>
     <p id="gptOutput">GPT-Auswertung erscheint hier...</p>
@@ -49,7 +49,7 @@
 
   <div id="export" class="tab" style="display:none">
     <h2>Export</h2>
-    <button onclick="alert('Export als PDF simuliert')">PDF-Export</button>
+    <button onclick="alert('PDF-Export wird später ergänzt')">PDF-Export</button>
   </div>
 
   <script src="script.js"></script>
