@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VAL-ID V32</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>VAL-ID V32 – Demo</h1>
+  <div>
+    <label>Emotion (0–10): <input type="range" min="0" max="10" value="5" id="emotionSlider" /></label>
+    <span id="emotionValue">5</span>
+  </div>
+  <div>
+    <label>Freitext: <textarea id="emotionText"></textarea></label>
+  </div>
+  <button onclick="exportPDF()">Exportieren</button>
+  <script src="script.js"></script>
+</body>
+</html>
