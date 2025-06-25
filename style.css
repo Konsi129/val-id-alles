@@ -1,4 +1,5 @@
-body { font-family: sans-serif; padding: 20px; background: #f4f4f4; }
+body { font-family: Arial, sans-serif; padding: 20px; background: #f9f9f9; }
 h1 { color: #333; }
-label, textarea { display: block; margin-top: 15px; }
-button { margin-top: 20px; padding: 10px 20px; }
+.tabs button { margin: 5px; padding: 10px 15px; }
+.tab { margin-top: 20px; }
+textarea, input[type="text"] { width: 300px; height: 60px; }

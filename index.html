@@ -3,19 +3,56 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VAL-ID V32</title>
+  <title>VAL-ID V100</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>VAL-ID V32 – Demo</h1>
-  <div>
-    <label>Emotion (0–10): <input type="range" min="0" max="10" value="5" id="emotionSlider" /></label>
+  <h1>VAL-ID V100 – Komplettversion</h1>
+  <div class="tabs">
+    <button onclick="showTab('szenen')">Szenen</button>
+    <button onclick="showTab('emotionen')">Emotionen</button>
+    <button onclick="showTab('verarbeitung')">Verarbeitung</button>
+    <button onclick="showTab('verlauf')">Verlauf</button>
+    <button onclick="showTab('export')">Export</button>
+  </div>
+
+  <div id="szenen" class="tab">
+    <h2>Szenenwahl</h2>
+    <button onclick="selectScene('validierend')">Validierend</button>
+    <button onclick="selectScene('invalidierend')">Invalidierend</button>
+    <p id="sceneStatus">Keine Szene gewählt</p>
+  </div>
+
+  <div id="emotionen" class="tab" style="display:none">
+    <h2>Emotionen</h2>
+    <label>Skala (0–10): <input type="range" min="0" max="10" value="5" id="emotionRange" /></label>
     <span id="emotionValue">5</span>
+    <br/><br/>
+    <label>Freitext:<br/><textarea id="emotionText"></textarea></label>
+    <br/>
+    <button onclick="analyzeEmotion()">Analysieren</button>
+    <p id="gptOutput">GPT-Auswertung erscheint hier...</p>
   </div>
-  <div>
-    <label>Freitext: <textarea id="emotionText"></textarea></label>
+
+  <div id="verarbeitung" class="tab" style="display:none">
+    <h2>Verarbeitung</h2>
+    <label>Bindungserwartung (0–10): <input type="range" min="0" max="10" value="5" id="bindungRange" /></label>
+    <span id="bindungValue">5</span>
+    <br/><br/>
+    <label>Schema-Ergänzung:<br/><input type="text" placeholder="Ich bin ..., weil ..." id="schemaInput" /></label>
   </div>
-  <button onclick="exportPDF()">Exportieren</button>
+
+  <div id="verlauf" class="tab" style="display:none">
+    <h2>Verlauf (Demo)</h2>
+    <canvas id="verlaufChart" width="400" height="200"></canvas>
+  </div>
+
+  <div id="export" class="tab" style="display:none">
+    <h2>Export</h2>
+    <button onclick="alert('Export als PDF simuliert')">PDF-Export</button>
+  </div>
+
   <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>
